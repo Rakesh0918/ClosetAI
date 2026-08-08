@@ -2152,3 +2152,75 @@ Required component groups:
 - Standard error schema.
 - Pagination schema.
 - Rate limit headers.
+
+# ClosetAI API Specification
+
+## 1. API Conventions
+
+### Base URL
+
+Development:
+
+`https://api-dev.closetai.com`
+
+Production:
+
+`https://api.closetai.com`
+
+### API Versioning
+
+All public API endpoints must be versioned.
+
+Example:
+
+`/v1/auth/apple`
+
+### Content Type
+
+Requests and responses use:
+
+`application/json`
+
+### Authentication
+
+Authenticated endpoints use:
+
+`Authorization: Bearer <access_token>`
+
+### Standard Response Rules
+
+Successful responses return HTTP status codes in the `2xx` range.
+
+Client errors return `4xx`.
+
+Server errors return `5xx`.
+
+---
+
+# 2. Authentication
+
+## 2.1 Sign in with Apple
+
+### Endpoint
+
+`POST /v1/auth/apple`
+
+### Purpose
+
+Authenticates a ClosetAI user using Apple's Sign in with Apple credentials.
+
+The iOS application obtains the Apple credential and sends the required credential information to the ClosetAI backend.
+
+The backend is responsible for validating the Apple credential with Apple's authentication infrastructure.
+
+The iOS application must not independently create ClosetAI access or refresh tokens.
+
+---
+
+### Request
+
+```json
+{
+  "identityToken": "apple-identity-token",
+  "authorizationCode": "apple-authorization-code"
+}
