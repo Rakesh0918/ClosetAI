@@ -142,6 +142,24 @@ final class APIClientTests: XCTestCase {
             session: session
         )
     }
+    
+    func testNoContentResponseSucceedsFor204() async throws {
+        MockURLProtocol.configure(
+            statusCode: 204,
+            responseBody: ""
+        )
+
+        let client = makeClient()
+
+        let request = APIRequest<NoContentResponse>(
+            path: "/v1/test",
+            method: .post
+        )
+
+        let response = try await client.send(request)
+
+        XCTAssertNotNil(response)
+    }
 }
 
 // MARK: - Test Response Model

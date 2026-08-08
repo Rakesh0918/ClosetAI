@@ -37,7 +37,9 @@ struct URLSessionAPIClient: APIClient {
         let urlRequest = try makeURLRequest(from: request)
 
         do {
-            let (data, response) = try await session.data(for: urlRequest)
+            let (data, response) = try await session.data(
+                for: urlRequest
+            )
 
             guard let httpResponse = response as? HTTPURLResponse else {
                 throw NetworkError.invalidResponse
@@ -49,8 +51,22 @@ struct URLSessionAPIClient: APIClient {
                 )
             }
 
+            // HTTP 204 / empty successful response.
+            if data.isEmpty {
+                guard let emptyResponse = NoContentResponse() as? Response else {
+                    throw NetworkError.decodingFailed(
+                        underlying: "Expected response body but received empty data."
+                    )
+                }
+
+                return emptyResponse
+            }
+
             do {
-                return try decoder.decode(Response.self, from: data)
+                return try decoder.decode(
+                    Response.self,
+                    from: data
+                )
             } catch {
                 throw NetworkError.decodingFailed(
                     underlying: error.localizedDescription
@@ -73,11 +89,14 @@ struct URLSessionAPIClient: APIClient {
 // MARK: - Request Construction
 
 private extension URLSessionAPIClient {
+
     func makeURLRequest<Response>(
         from request: APIRequest<Response>
     ) throws -> URLRequest {
         guard var components = URLComponents(
-            url: baseURL.appending(path: request.path),
+            url: baseURL.appending(
+                path: request.path
+            ),
             resolvingAgainstBaseURL: false
         ) else {
             throw NetworkError.invalidURL
@@ -91,19 +110,26 @@ private extension URLSessionAPIClient {
             throw NetworkError.invalidURL
         }
 
-        var urlRequest = URLRequest(url: url)
+        var urlRequest = URLRequest(
+            url: url
+        )
 
         urlRequest.httpMethod = request.method.rawValue
         urlRequest.httpBody = request.body
 
         for (field, value) in request.headers {
-            urlRequest.setValue(value, forHTTPHeaderField: field)
+            urlRequest.setValue(
+                value,
+                forHTTPHeaderField: field
+            )
         }
 
         return urlRequest
     }
 
-    func mapURLError(_ error: URLError) -> NetworkError {
+    func mapURLError(
+        _ error: URLError
+    ) -> NetworkError {
         switch error.code {
         case .notConnectedToInternet,
              .networkConnectionLost:

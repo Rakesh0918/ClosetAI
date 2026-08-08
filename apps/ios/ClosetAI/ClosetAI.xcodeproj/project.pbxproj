@@ -27,6 +27,11 @@
 		18BE6F6B3024EA51008EE769 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE6F6A3024EA51008EE769 /* AppEnvironment.swift */; };
 		18BE6F6D3024EA64008EE769 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE6F6C3024EA64008EE769 /* AppRouter.swift */; };
 		18BE6F6F3024EA74008EE769 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE6F6E3024EA74008EE769 /* RootView.swift */; };
+		18C6F9CC30278AF3001C905A /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6F9CB30278AF3001C905A /* AuthenticationService.swift */; };
+		18C6F9CE30278B2F001C905A /* AuthenticationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6F9CD30278B2F001C905A /* AuthenticationModels.swift */; };
+		18C6F9D030278C20001C905A /* APIAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6F9CF30278C20001C905A /* APIAuthenticationService.swift */; };
+		18C6F9D230278D56001C905A /* APIAuthenticationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6F9D130278D56001C905A /* APIAuthenticationServiceTests.swift */; };
+		18C6F9D4302795BD001C905A /* NoContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6F9D3302795BD001C905A /* NoContentResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +75,11 @@
 		18BE6F6A3024EA51008EE769 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		18BE6F6C3024EA64008EE769 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		18BE6F6E3024EA74008EE769 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		18C6F9CB30278AF3001C905A /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		18C6F9CD30278B2F001C905A /* AuthenticationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModels.swift; sourceTree = "<group>"; };
+		18C6F9CF30278C20001C905A /* APIAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuthenticationService.swift; sourceTree = "<group>"; };
+		18C6F9D130278D56001C905A /* APIAuthenticationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuthenticationServiceTests.swift; sourceTree = "<group>"; };
+		18C6F9D3302795BD001C905A /* NoContentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoContentResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -117,6 +127,7 @@
 				180C0F3E3026FC4C0074A5A8 /* APIRequest.swift */,
 				180C0F403026FCB60074A5A8 /* NetworkError.swift */,
 				180C0F423026FD070074A5A8 /* APIClient.swift */,
+				18C6F9D3302795BD001C905A /* NoContentResponse.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -162,6 +173,9 @@
 				180C0F593027440B0074A5A8 /* AuthenticationState.swift */,
 				180C0F5B302744480074A5A8 /* TokenStore.swift */,
 				180C0F61302746920074A5A8 /* SessionManager.swift */,
+				18C6F9CB30278AF3001C905A /* AuthenticationService.swift */,
+				18C6F9CD30278B2F001C905A /* AuthenticationModels.swift */,
+				18C6F9CF30278C20001C905A /* APIAuthenticationService.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -171,6 +185,7 @@
 			children = (
 				180C0F5E302744EA0074A5A8 /* TokenStoreTests.swift */,
 				180C0F63302747130074A5A8 /* SessionManagerTests.swift */,
+				18C6F9D130278D56001C905A /* APIAuthenticationServiceTests.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -426,11 +441,15 @@
 				180C0F413026FCB60074A5A8 /* NetworkError.swift in Sources */,
 				180C0F68302749E90074A5A8 /* AuthenticationView.swift in Sources */,
 				180C0F3F3026FC4C0074A5A8 /* APIRequest.swift in Sources */,
+				18C6F9D030278C20001C905A /* APIAuthenticationService.swift in Sources */,
 				18BE6F663024E9EB008EE769 /* ClosetAIApp.swift in Sources */,
 				180C0F3D3026FC010074A5A8 /* HTTPMethod.swift in Sources */,
+				18C6F9CE30278B2F001C905A /* AuthenticationModels.swift in Sources */,
+				18C6F9CC30278AF3001C905A /* AuthenticationService.swift in Sources */,
 				18BE6F693024EA42008EE769 /* AppContainer.swift in Sources */,
 				18BE6F6B3024EA51008EE769 /* AppEnvironment.swift in Sources */,
 				18BE6F6F3024EA74008EE769 /* RootView.swift in Sources */,
+				18C6F9D4302795BD001C905A /* NoContentResponse.swift in Sources */,
 				180C0F433026FD070074A5A8 /* APIClient.swift in Sources */,
 				180C0F5A3027440B0074A5A8 /* AuthenticationState.swift in Sources */,
 			);
@@ -440,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C6F9D230278D56001C905A /* APIAuthenticationServiceTests.swift in Sources */,
 				180C0F463026FE8F0074A5A8 /* APIClientTests.swift in Sources */,
 				180C0F57302706CC0074A5A8 /* AppContainerTests.swift in Sources */,
 				180C0F55302706A80074A5A8 /* MockAPIClient.swift in Sources */,
