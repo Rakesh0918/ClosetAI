@@ -32,6 +32,10 @@
 		18C6F9D030278C20001C905A /* APIAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6F9CF30278C20001C905A /* APIAuthenticationService.swift */; };
 		18C6F9D230278D56001C905A /* APIAuthenticationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6F9D130278D56001C905A /* APIAuthenticationServiceTests.swift */; };
 		18C6F9D4302795BD001C905A /* NoContentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6F9D3302795BD001C905A /* NoContentResponse.swift */; };
+		18C6F9D630279B58001C905A /* AppleAuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6F9D530279B58001C905A /* AppleAuthenticationProvider.swift */; };
+		18C6F9D830279BDB001C905A /* MockAppleAuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6F9D730279BDB001C905A /* MockAppleAuthenticationProvider.swift */; };
+		18C6F9DA30279CC4001C905A /* AppleAuthenticationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6F9D930279CC4001C905A /* AppleAuthenticationProviderTests.swift */; };
+		18C6F9DD30279E42001C905A /* SystemAppleAuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6F9DC30279E42001C905A /* SystemAppleAuthenticationProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,10 @@
 		18C6F9CF30278C20001C905A /* APIAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuthenticationService.swift; sourceTree = "<group>"; };
 		18C6F9D130278D56001C905A /* APIAuthenticationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuthenticationServiceTests.swift; sourceTree = "<group>"; };
 		18C6F9D3302795BD001C905A /* NoContentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoContentResponse.swift; sourceTree = "<group>"; };
+		18C6F9D530279B58001C905A /* AppleAuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthenticationProvider.swift; sourceTree = "<group>"; };
+		18C6F9D730279BDB001C905A /* MockAppleAuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppleAuthenticationProvider.swift; sourceTree = "<group>"; };
+		18C6F9D930279CC4001C905A /* AppleAuthenticationProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthenticationProviderTests.swift; sourceTree = "<group>"; };
+		18C6F9DC30279E42001C905A /* SystemAppleAuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAppleAuthenticationProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -176,6 +184,8 @@
 				18C6F9CB30278AF3001C905A /* AuthenticationService.swift */,
 				18C6F9CD30278B2F001C905A /* AuthenticationModels.swift */,
 				18C6F9CF30278C20001C905A /* APIAuthenticationService.swift */,
+				18C6F9D530279B58001C905A /* AppleAuthenticationProvider.swift */,
+				18C6F9DC30279E42001C905A /* SystemAppleAuthenticationProvider.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -186,6 +196,8 @@
 				180C0F5E302744EA0074A5A8 /* TokenStoreTests.swift */,
 				180C0F63302747130074A5A8 /* SessionManagerTests.swift */,
 				18C6F9D130278D56001C905A /* APIAuthenticationServiceTests.swift */,
+				18C6F9D730279BDB001C905A /* MockAppleAuthenticationProvider.swift */,
+				18C6F9D930279CC4001C905A /* AppleAuthenticationProviderTests.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -436,6 +448,7 @@
 			files = (
 				18BE6F6D3024EA64008EE769 /* AppRouter.swift in Sources */,
 				180C0F6B30274A130074A5A8 /* HomeView.swift in Sources */,
+				18C6F9D630279B58001C905A /* AppleAuthenticationProvider.swift in Sources */,
 				180C0F5C302744480074A5A8 /* TokenStore.swift in Sources */,
 				180C0F62302746920074A5A8 /* SessionManager.swift in Sources */,
 				180C0F413026FCB60074A5A8 /* NetworkError.swift in Sources */,
@@ -445,6 +458,7 @@
 				18BE6F663024E9EB008EE769 /* ClosetAIApp.swift in Sources */,
 				180C0F3D3026FC010074A5A8 /* HTTPMethod.swift in Sources */,
 				18C6F9CE30278B2F001C905A /* AuthenticationModels.swift in Sources */,
+				18C6F9DD30279E42001C905A /* SystemAppleAuthenticationProvider.swift in Sources */,
 				18C6F9CC30278AF3001C905A /* AuthenticationService.swift in Sources */,
 				18BE6F693024EA42008EE769 /* AppContainer.swift in Sources */,
 				18BE6F6B3024EA51008EE769 /* AppEnvironment.swift in Sources */,
@@ -460,11 +474,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				18C6F9D230278D56001C905A /* APIAuthenticationServiceTests.swift in Sources */,
+				18C6F9DA30279CC4001C905A /* AppleAuthenticationProviderTests.swift in Sources */,
 				180C0F463026FE8F0074A5A8 /* APIClientTests.swift in Sources */,
 				180C0F57302706CC0074A5A8 /* AppContainerTests.swift in Sources */,
 				180C0F55302706A80074A5A8 /* MockAPIClient.swift in Sources */,
 				180C0F64302747130074A5A8 /* SessionManagerTests.swift in Sources */,
 				180C0F5F302744EA0074A5A8 /* TokenStoreTests.swift in Sources */,
+				18C6F9D830279BDB001C905A /* MockAppleAuthenticationProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
