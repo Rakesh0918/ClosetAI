@@ -8,16 +8,23 @@
 import SwiftUI
 
 struct HomeView: View {
-    var body: some View {
-        VStack(spacing: 16) {
-            Text("ClosetAI")
-                .font(.largeTitle)
-                .fontWeight(.bold)
 
-            Text("Home")
-                .font(.title2)
+    var body: some View {
+        NavigationStack {
+            VStack(spacing: 16) {
+                Image(systemName: "tshirt.fill")
+                    .font(.system(size: 56))
+
+                Text("Welcome to ClosetAI")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+
+                Text("Your wardrobe is ready.")
+                    .foregroundStyle(.secondary)
+            }
+            .padding()
+            .navigationTitle("Home")
         }
-        .padding()
     }
 }
 

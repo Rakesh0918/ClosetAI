@@ -23,15 +23,9 @@ struct RootView: View {
             case .unauthenticated,
                  .authenticating,
                  .expired:
-
                 AuthenticationView(
-                    viewModel: AuthenticationViewModel(
-                        sessionManager: container.sessionManager,
-                        appleAuthenticationProvider:
-                            container.appleAuthenticationProvider
-                    )
+                    viewModel: container.authenticationViewModel
                 )
-
             case .authenticated,
                  .refreshing:
 

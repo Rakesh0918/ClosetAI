@@ -18,6 +18,8 @@ final class AppContainer {
     let sessionManager: SessionManager
     let appleAuthenticationProvider: any AppleAuthenticationProvider
 
+    let authenticationViewModel: AuthenticationViewModel
+
     init(
         environment: AppEnvironment,
         apiClient: any APIClient,
@@ -32,6 +34,11 @@ final class AppContainer {
         self.tokenStore = tokenStore
         self.sessionManager = sessionManager
         self.appleAuthenticationProvider = appleAuthenticationProvider
+
+        self.authenticationViewModel = AuthenticationViewModel(
+            sessionManager: sessionManager,
+            appleAuthenticationProvider: appleAuthenticationProvider
+        )
     }
 
     static var live: AppContainer {

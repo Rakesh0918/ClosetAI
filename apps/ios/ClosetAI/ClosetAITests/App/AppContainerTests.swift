@@ -122,4 +122,31 @@ final class AppContainerTests: XCTestCase {
                 is MockAppleAuthenticationProvider
         )
     }
+    
+    func testContainerStoresAuthenticationViewModel() {
+        let environment = AppEnvironment.development
+        let apiClient = MockAPIClient()
+        let tokenStore = MockTokenStore()
+        let authenticationService = MockAuthenticationService()
+        let appleAuthenticationProvider =
+            MockAppleAuthenticationProvider()
+
+        let sessionManager = SessionManager(
+            authenticationService: authenticationService,
+            tokenStore: tokenStore
+        )
+
+        let container = AppContainer(
+            environment: environment,
+            apiClient: apiClient,
+            authenticationService: authenticationService,
+            tokenStore: tokenStore,
+            sessionManager: sessionManager,
+            appleAuthenticationProvider: appleAuthenticationProvider
+        )
+
+        XCTAssertNotNil(
+            container.authenticationViewModel
+        )
+    }
 }
