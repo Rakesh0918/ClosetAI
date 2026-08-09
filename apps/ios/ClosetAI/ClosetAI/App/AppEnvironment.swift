@@ -8,12 +8,35 @@
 import Foundation
 
 struct AppEnvironment: Sendable {
+
+    enum Mode: Sendable {
+        case development
+        case production
+    }
+
+    let mode: Mode
     let apiBaseURL: URL
     let appVersion: String
     let buildNumber: String
 
     static let development = AppEnvironment(
-        apiBaseURL: URL(string: "https://api-dev.closetai.com")!,
+        mode: .development,
+        apiBaseURL: URL(
+            string: "https://api-dev.closetai.com"
+        )!,
+        appVersion: Bundle.main.object(
+            forInfoDictionaryKey: "CFBundleShortVersionString"
+        ) as? String ?? "1.0",
+        buildNumber: Bundle.main.object(
+            forInfoDictionaryKey: "CFBundleVersion"
+        ) as? String ?? "1"
+    )
+
+    static let production = AppEnvironment(
+        mode: .production,
+        apiBaseURL: URL(
+            string: "https://api.closetai.com"
+        )!,
         appVersion: Bundle.main.object(
             forInfoDictionaryKey: "CFBundleShortVersionString"
         ) as? String ?? "1.0",

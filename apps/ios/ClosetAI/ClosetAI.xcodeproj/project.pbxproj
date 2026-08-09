@@ -43,6 +43,8 @@
 		18E6CF6C30288D1200EFA132 /* AuthenticationViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF6B30288D1200EFA132 /* AuthenticationViewModelTests.swift */; };
 		18E6CF6E30288E0A00EFA132 /* MockTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF6D30288E0A00EFA132 /* MockTokenStore.swift */; };
 		18E6CF70302894D300EFA132 /* UnavailableAppleAuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF6F302894D300EFA132 /* UnavailableAppleAuthenticationProvider.swift */; };
+		18E6CF723028AC0800EFA132 /* DevelopmentAppleAuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF713028AC0800EFA132 /* DevelopmentAppleAuthenticationProvider.swift */; };
+		18E6CF743028AC8900EFA132 /* DevelopmentAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF733028AC8900EFA132 /* DevelopmentAuthenticationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,8 @@
 		18E6CF6B30288D1200EFA132 /* AuthenticationViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModelTests.swift; sourceTree = "<group>"; };
 		18E6CF6D30288E0A00EFA132 /* MockTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTokenStore.swift; sourceTree = "<group>"; };
 		18E6CF6F302894D300EFA132 /* UnavailableAppleAuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnavailableAppleAuthenticationProvider.swift; sourceTree = "<group>"; };
+		18E6CF713028AC0800EFA132 /* DevelopmentAppleAuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentAppleAuthenticationProvider.swift; sourceTree = "<group>"; };
+		18E6CF733028AC8900EFA132 /* DevelopmentAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentAuthenticationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 				18C6F9D530279B58001C905A /* AppleAuthenticationProvider.swift */,
 				18C6F9DC30279E42001C905A /* SystemAppleAuthenticationProvider.swift */,
 				18E6CF6F302894D300EFA132 /* UnavailableAppleAuthenticationProvider.swift */,
+				18E6CF713028AC0800EFA132 /* DevelopmentAppleAuthenticationProvider.swift */,
+				18E6CF733028AC8900EFA132 /* DevelopmentAuthenticationService.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -499,6 +505,7 @@
 				18E6CF70302894D300EFA132 /* UnavailableAppleAuthenticationProvider.swift in Sources */,
 				18BE6F663024E9EB008EE769 /* ClosetAIApp.swift in Sources */,
 				180C0F3D3026FC010074A5A8 /* HTTPMethod.swift in Sources */,
+				18E6CF743028AC8900EFA132 /* DevelopmentAuthenticationService.swift in Sources */,
 				18C6F9CE30278B2F001C905A /* AuthenticationModels.swift in Sources */,
 				18C6F9DD30279E42001C905A /* SystemAppleAuthenticationProvider.swift in Sources */,
 				18C6F9CC30278AF3001C905A /* AuthenticationService.swift in Sources */,
@@ -508,6 +515,7 @@
 				18C6F9D4302795BD001C905A /* NoContentResponse.swift in Sources */,
 				180C0F433026FD070074A5A8 /* APIClient.swift in Sources */,
 				180C0F5A3027440B0074A5A8 /* AuthenticationState.swift in Sources */,
+				18E6CF723028AC0800EFA132 /* DevelopmentAppleAuthenticationProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

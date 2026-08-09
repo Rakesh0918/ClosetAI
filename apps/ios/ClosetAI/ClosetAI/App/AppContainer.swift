@@ -48,9 +48,17 @@ final class AppContainer {
             baseURL: environment.apiBaseURL
         )
 
-        let authenticationService = APIAuthenticationService(
-            apiClient: apiClient
-        )
+        let authenticationService: any AuthenticationService
+
+        switch environment.mode {
+        case .development:
+            authenticationService = DevelopmentAuthenticationService()
+
+        case .production:
+            authenticationService = APIAuthenticationService(
+                apiClient: apiClient
+            )
+        }
 
         let tokenStore = KeychainTokenStore()
 
@@ -60,7 +68,9 @@ final class AppContainer {
         )
 
         let appleAuthenticationProvider =
-            UnavailableAppleAuthenticationProvider()
+            Self.makeAppleAuthenticationProvider(
+                environment: environment
+            )
 
         return AppContainer(
             environment: environment,
@@ -70,5 +80,18 @@ final class AppContainer {
             sessionManager: sessionManager,
             appleAuthenticationProvider: appleAuthenticationProvider
         )
+    }
+    
+    private static func makeAppleAuthenticationProvider(
+        environment: AppEnvironment
+    ) -> any AppleAuthenticationProvider {
+
+        switch environment.mode {
+        case .development:
+            return DevelopmentAppleAuthenticationProvider()
+
+        case .production:
+            return UnavailableAppleAuthenticationProvider()
+        }
     }
 }
