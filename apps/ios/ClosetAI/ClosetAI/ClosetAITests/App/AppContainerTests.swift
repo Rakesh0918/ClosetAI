@@ -18,13 +18,18 @@ final class AppContainerTests: XCTestCase {
         let apiClient = MockAPIClient()
         let tokenStore = MockTokenStore()
 
+        let authenticationService = MockAuthenticationService()
+
         let sessionManager = SessionManager(
+            authenticationService: authenticationService,
             tokenStore: tokenStore
         )
 
         let container = AppContainer(
             environment: environment,
             apiClient: apiClient,
+            authenticationService: authenticationService,
+            tokenStore: tokenStore,
             sessionManager: sessionManager
         )
 
@@ -39,13 +44,18 @@ final class AppContainerTests: XCTestCase {
         let apiClient = MockAPIClient()
         let tokenStore = MockTokenStore()
 
+        let authenticationService = MockAuthenticationService()
+
         let sessionManager = SessionManager(
+            authenticationService: authenticationService,
             tokenStore: tokenStore
         )
 
         let container = AppContainer(
             environment: environment,
             apiClient: apiClient,
+            authenticationService: authenticationService,
+            tokenStore: tokenStore,
             sessionManager: sessionManager
         )
 
@@ -59,13 +69,18 @@ final class AppContainerTests: XCTestCase {
         let apiClient = MockAPIClient()
         let tokenStore = MockTokenStore()
 
+        let authenticationService = MockAuthenticationService()
+
         let sessionManager = SessionManager(
+            authenticationService: authenticationService,
             tokenStore: tokenStore
         )
 
         let container = AppContainer(
             environment: environment,
             apiClient: apiClient,
+            authenticationService: authenticationService,
+            tokenStore: tokenStore,
             sessionManager: sessionManager
         )
 

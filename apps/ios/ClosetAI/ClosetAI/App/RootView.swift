@@ -45,18 +45,25 @@ struct RootView: View {
         baseURL: environment.apiBaseURL
     )
 
+    let authenticationService = APIAuthenticationService(
+        apiClient: apiClient
+    )
+
     let tokenStore = KeychainTokenStore(
         service: "com.rakesh.closetai.preview",
         account: "preview"
     )
 
     let sessionManager = SessionManager(
+        authenticationService: authenticationService,
         tokenStore: tokenStore
     )
 
     let container = AppContainer(
         environment: environment,
         apiClient: apiClient,
+        authenticationService: authenticationService,
+        tokenStore: tokenStore,
         sessionManager: sessionManager
     )
 

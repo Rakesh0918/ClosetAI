@@ -9,27 +9,8 @@ import SwiftUI
 
 @main
 struct ClosetAIApp: App {
-    private let container: AppContainer
 
-    init() {
-        let environment = AppEnvironment.development
-
-        let apiClient = URLSessionAPIClient(
-            baseURL: environment.apiBaseURL
-        )
-
-        let tokenStore = KeychainTokenStore()
-
-        let sessionManager = SessionManager(
-            tokenStore: tokenStore
-        )
-
-        self.container = AppContainer(
-            environment: environment,
-            apiClient: apiClient,
-            sessionManager: sessionManager
-        )
-    }
+    private let container = AppContainer.live
 
     var body: some Scene {
         WindowGroup {

@@ -36,6 +36,7 @@
 		18C6F9D830279BDB001C905A /* MockAppleAuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6F9D730279BDB001C905A /* MockAppleAuthenticationProvider.swift */; };
 		18C6F9DA30279CC4001C905A /* AppleAuthenticationProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6F9D930279CC4001C905A /* AppleAuthenticationProviderTests.swift */; };
 		18C6F9DD30279E42001C905A /* SystemAppleAuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C6F9DC30279E42001C905A /* SystemAppleAuthenticationProvider.swift */; };
+		18E6CF3130284AE300EFA132 /* MockAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF3030284AE300EFA132 /* MockAuthenticationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		18C6F9D730279BDB001C905A /* MockAppleAuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppleAuthenticationProvider.swift; sourceTree = "<group>"; };
 		18C6F9D930279CC4001C905A /* AppleAuthenticationProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthenticationProviderTests.swift; sourceTree = "<group>"; };
 		18C6F9DC30279E42001C905A /* SystemAppleAuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemAppleAuthenticationProvider.swift; sourceTree = "<group>"; };
+		18E6CF3030284AE300EFA132 /* MockAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthenticationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -198,6 +200,7 @@
 				18C6F9D130278D56001C905A /* APIAuthenticationServiceTests.swift */,
 				18C6F9D730279BDB001C905A /* MockAppleAuthenticationProvider.swift */,
 				18C6F9D930279CC4001C905A /* AppleAuthenticationProviderTests.swift */,
+				18E6CF3030284AE300EFA132 /* MockAuthenticationService.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				180C0F57302706CC0074A5A8 /* AppContainerTests.swift in Sources */,
 				180C0F55302706A80074A5A8 /* MockAPIClient.swift in Sources */,
 				180C0F64302747130074A5A8 /* SessionManagerTests.swift in Sources */,
+				18E6CF3130284AE300EFA132 /* MockAuthenticationService.swift in Sources */,
 				180C0F5F302744EA0074A5A8 /* TokenStoreTests.swift in Sources */,
 				18C6F9D830279BDB001C905A /* MockAppleAuthenticationProvider.swift in Sources */,
 			);
