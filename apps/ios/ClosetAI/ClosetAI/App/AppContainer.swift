@@ -18,6 +18,8 @@ final class AppContainer {
     let appleAuthenticationProvider: any AppleAuthenticationProvider
     let authenticatedAPIClient: AuthenticatedAPIClient
     let userService: any UserService
+    let wardrobeService: any WardrobeService
+    let wardrobeAIService: any WardrobeAIService
     
     init(
         environment: AppEnvironment,
@@ -27,7 +29,9 @@ final class AppContainer {
         sessionManager: SessionManager,
         appleAuthenticationProvider: any AppleAuthenticationProvider,
         authenticatedAPIClient: AuthenticatedAPIClient,
-        userService: any UserService
+        userService: any UserService,
+        wardrobeService: any WardrobeService,
+        wardrobeAIService: any WardrobeAIService
     ) {
         self.environment = environment
         self.apiClient = apiClient
@@ -37,6 +41,8 @@ final class AppContainer {
         self.appleAuthenticationProvider = appleAuthenticationProvider
         self.authenticatedAPIClient = authenticatedAPIClient
         self.userService = userService
+        self.wardrobeService = wardrobeService
+        self.wardrobeAIService = wardrobeAIService
     }
     
     static var live: AppContainer {
@@ -78,6 +84,12 @@ final class AppContainer {
         let userService = APIUserService(
             apiClient: authenticatedAPIClient
         )
+
+        let wardrobeService: any WardrobeService =
+            DevelopmentWardrobeService()
+        
+        let wardrobeAIService: any WardrobeAIService =
+            VisionWardrobeAIService()
         
         return AppContainer(
             environment: environment,
@@ -87,7 +99,9 @@ final class AppContainer {
             sessionManager: sessionManager,
             appleAuthenticationProvider: appleAuthenticationProvider,
             authenticatedAPIClient: authenticatedAPIClient,
-            userService: userService
+            userService: userService,
+            wardrobeService: wardrobeService,
+            wardrobeAIService: wardrobeAIService
         )
     }
     

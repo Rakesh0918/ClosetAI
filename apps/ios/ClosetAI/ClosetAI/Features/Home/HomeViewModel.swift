@@ -18,13 +18,19 @@ final class HomeViewModel {
 
     private let userService: any UserService
     private let sessionManager: SessionManager
+    private let wardrobeService: any WardrobeService
+    private let wardrobeAIService: any WardrobeAIService
 
     init(
         userService: any UserService,
-        sessionManager: SessionManager
+        sessionManager: SessionManager,
+        wardrobeService: any WardrobeService,
+        wardrobeAIService: any WardrobeAIService
     ) {
         self.userService = userService
         self.sessionManager = sessionManager
+        self.wardrobeService = wardrobeService
+        self.wardrobeAIService = wardrobeAIService
     }
 
     func loadCurrentUser() async {
@@ -48,5 +54,12 @@ final class HomeViewModel {
 
     func signOut() async {
         await sessionManager.logout()
+    }
+    
+    func makeWardrobeViewModel() -> WardrobeViewModel {
+        WardrobeViewModel(
+            wardrobeService: wardrobeService,
+            wardrobeAIService: wardrobeAIService
+        )
     }
 }

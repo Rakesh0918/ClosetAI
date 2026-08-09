@@ -57,6 +57,23 @@
 		18E6CF883028E1D000EFA132 /* APIUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF873028E1D000EFA132 /* APIUserService.swift */; };
 		18E6CF8A3028E4CF00EFA132 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF893028E4CF00EFA132 /* HomeViewModel.swift */; };
 		18E6CF8C3028EAB100EFA132 /* DevelopmentUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF8B3028EAB100EFA132 /* DevelopmentUserService.swift */; };
+		18E6CF903028ED2200EFA132 /* WardrobeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF8F3028ED2200EFA132 /* WardrobeCategory.swift */; };
+		18E6CF923028ED3100EFA132 /* WardrobeAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF913028ED3100EFA132 /* WardrobeAttributes.swift */; };
+		18E6CF943028ED4100EFA132 /* WardrobeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF933028ED4100EFA132 /* WardrobeImage.swift */; };
+		18E6CF963028ED4E00EFA132 /* WardrobeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF953028ED4E00EFA132 /* WardrobeItem.swift */; };
+		18E6CF9A3028EE2500EFA132 /* WardrobeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF993028EE2500EFA132 /* WardrobeService.swift */; };
+		18E6CF9C3028EE6300EFA132 /* DevelopmentWardrobeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF9B3028EE6300EFA132 /* DevelopmentWardrobeService.swift */; };
+		18E6CF9E3028EE9C00EFA132 /* WardrobeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF9D3028EE9C00EFA132 /* WardrobeViewModel.swift */; };
+		18E6CFA03028EED500EFA132 /* WardrobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF9F3028EED500EFA132 /* WardrobeView.swift */; };
+		18E6CFA23028F18800EFA132 /* WardrobeFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CFA13028F18800EFA132 /* WardrobeFilter.swift */; };
+		18E6CFA43028F30600EFA132 /* WardrobeAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CFA33028F30600EFA132 /* WardrobeAnalysis.swift */; };
+		18E6CFAA3028F3A900EFA132 /* DevelopmentWardrobeAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CFA93028F3A900EFA132 /* DevelopmentWardrobeAIService.swift */; };
+		18E6CFAC3028F3D700EFA132 /* WardrobeAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CFAB3028F3D700EFA132 /* WardrobeAIService.swift */; };
+		18E6CFAE3028F47500EFA132 /* WardrobeScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CFAD3028F47500EFA132 /* WardrobeScannerViewModel.swift */; };
+		18E6CFB13028F4F900EFA132 /* WardrobeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CFB03028F4F900EFA132 /* WardrobeScannerView.swift */; };
+		18E6CFB33028F94A00EFA132 /* FoundationModelsWardrobeAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CFB23028F94A00EFA132 /* FoundationModelsWardrobeAIService.swift */; };
+		18E6CFB53028F97D00EFA132 /* AIWardrobeAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CFB43028F97D00EFA132 /* AIWardrobeAnalysis.swift */; };
+		18E6CFB73028FBE100EFA132 /* VisionWardrobeAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CFB63028FBE100EFA132 /* VisionWardrobeAIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +146,23 @@
 		18E6CF873028E1D000EFA132 /* APIUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUserService.swift; sourceTree = "<group>"; };
 		18E6CF893028E4CF00EFA132 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		18E6CF8B3028EAB100EFA132 /* DevelopmentUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentUserService.swift; sourceTree = "<group>"; };
+		18E6CF8F3028ED2200EFA132 /* WardrobeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeCategory.swift; sourceTree = "<group>"; };
+		18E6CF913028ED3100EFA132 /* WardrobeAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeAttributes.swift; sourceTree = "<group>"; };
+		18E6CF933028ED4100EFA132 /* WardrobeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeImage.swift; sourceTree = "<group>"; };
+		18E6CF953028ED4E00EFA132 /* WardrobeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeItem.swift; sourceTree = "<group>"; };
+		18E6CF993028EE2500EFA132 /* WardrobeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeService.swift; sourceTree = "<group>"; };
+		18E6CF9B3028EE6300EFA132 /* DevelopmentWardrobeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentWardrobeService.swift; sourceTree = "<group>"; };
+		18E6CF9D3028EE9C00EFA132 /* WardrobeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeViewModel.swift; sourceTree = "<group>"; };
+		18E6CF9F3028EED500EFA132 /* WardrobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeView.swift; sourceTree = "<group>"; };
+		18E6CFA13028F18800EFA132 /* WardrobeFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeFilter.swift; sourceTree = "<group>"; };
+		18E6CFA33028F30600EFA132 /* WardrobeAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeAnalysis.swift; sourceTree = "<group>"; };
+		18E6CFA93028F3A900EFA132 /* DevelopmentWardrobeAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentWardrobeAIService.swift; sourceTree = "<group>"; };
+		18E6CFAB3028F3D700EFA132 /* WardrobeAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeAIService.swift; sourceTree = "<group>"; };
+		18E6CFAD3028F47500EFA132 /* WardrobeScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeScannerViewModel.swift; sourceTree = "<group>"; };
+		18E6CFB03028F4F900EFA132 /* WardrobeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardrobeScannerView.swift; sourceTree = "<group>"; };
+		18E6CFB23028F94A00EFA132 /* FoundationModelsWardrobeAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationModelsWardrobeAIService.swift; sourceTree = "<group>"; };
+		18E6CFB43028F97D00EFA132 /* AIWardrobeAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIWardrobeAnalysis.swift; sourceTree = "<group>"; };
+		18E6CFB63028FBE100EFA132 /* VisionWardrobeAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionWardrobeAIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +294,7 @@
 		18BE6F5E3024E9EB008EE769 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				18E6CFAF3028F48600EFA132 /* Wardrobe */,
 				180C0F69302749FE0074A5A8 /* Home */,
 				180C0F66302749D60074A5A8 /* Authentication */,
 			);
@@ -288,6 +323,8 @@
 				18BE6F5C3024E9EB008EE769 /* Core */,
 				18BE6F5D3024E9EB008EE769 /* DesignSystem */,
 				18BE6F5E3024E9EB008EE769 /* Features */,
+				18E6CF973028EE0C00EFA132 /* Services */,
+				18E6CF8D3028ED0300EFA132 /* Domain */,
 				18BE6F5F3024E9EB008EE769 /* Resources */,
 				18BE6F603024E9EB008EE769 /* Shared */,
 			);
@@ -396,6 +433,60 @@
 				18E6CF8B3028EAB100EFA132 /* DevelopmentUserService.swift */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		18E6CF8D3028ED0300EFA132 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				18E6CF8E3028ED0F00EFA132 /* Wardrobe */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		18E6CF8E3028ED0F00EFA132 /* Wardrobe */ = {
+			isa = PBXGroup;
+			children = (
+				18E6CF8F3028ED2200EFA132 /* WardrobeCategory.swift */,
+				18E6CF913028ED3100EFA132 /* WardrobeAttributes.swift */,
+				18E6CF933028ED4100EFA132 /* WardrobeImage.swift */,
+				18E6CF953028ED4E00EFA132 /* WardrobeItem.swift */,
+				18E6CFA13028F18800EFA132 /* WardrobeFilter.swift */,
+				18E6CFA33028F30600EFA132 /* WardrobeAnalysis.swift */,
+				18E6CFB43028F97D00EFA132 /* AIWardrobeAnalysis.swift */,
+			);
+			path = Wardrobe;
+			sourceTree = "<group>";
+		};
+		18E6CF973028EE0C00EFA132 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				18E6CF983028EE1500EFA132 /* Wardrobe */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		18E6CF983028EE1500EFA132 /* Wardrobe */ = {
+			isa = PBXGroup;
+			children = (
+				18E6CF993028EE2500EFA132 /* WardrobeService.swift */,
+				18E6CF9B3028EE6300EFA132 /* DevelopmentWardrobeService.swift */,
+				18E6CFA93028F3A900EFA132 /* DevelopmentWardrobeAIService.swift */,
+				18E6CFAB3028F3D700EFA132 /* WardrobeAIService.swift */,
+				18E6CFB23028F94A00EFA132 /* FoundationModelsWardrobeAIService.swift */,
+				18E6CFB63028FBE100EFA132 /* VisionWardrobeAIService.swift */,
+			);
+			path = Wardrobe;
+			sourceTree = "<group>";
+		};
+		18E6CFAF3028F48600EFA132 /* Wardrobe */ = {
+			isa = PBXGroup;
+			children = (
+				18E6CF9F3028EED500EFA132 /* WardrobeView.swift */,
+				18E6CF9D3028EE9C00EFA132 /* WardrobeViewModel.swift */,
+				18E6CFAD3028F47500EFA132 /* WardrobeScannerViewModel.swift */,
+				18E6CFB03028F4F900EFA132 /* WardrobeScannerView.swift */,
+			);
+			path = Wardrobe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -535,38 +626,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				18BE6F6D3024EA64008EE769 /* AppRouter.swift in Sources */,
+				18E6CFAA3028F3A900EFA132 /* DevelopmentWardrobeAIService.swift in Sources */,
+				18E6CFA23028F18800EFA132 /* WardrobeFilter.swift in Sources */,
 				180C0F6B30274A130074A5A8 /* HomeView.swift in Sources */,
 				18C6F9D630279B58001C905A /* AppleAuthenticationProvider.swift in Sources */,
+				18E6CF943028ED4100EFA132 /* WardrobeImage.swift in Sources */,
+				18E6CFB13028F4F900EFA132 /* WardrobeScannerView.swift in Sources */,
 				18E6CF8A3028E4CF00EFA132 /* HomeViewModel.swift in Sources */,
 				180C0F5C302744480074A5A8 /* TokenStore.swift in Sources */,
 				180C0F62302746920074A5A8 /* SessionManager.swift in Sources */,
 				180C0F413026FCB60074A5A8 /* NetworkError.swift in Sources */,
+				18E6CF963028ED4E00EFA132 /* WardrobeItem.swift in Sources */,
 				180C0F68302749E90074A5A8 /* AuthenticationView.swift in Sources */,
 				180C0F3F3026FC4C0074A5A8 /* APIRequest.swift in Sources */,
 				18C6F9D030278C20001C905A /* APIAuthenticationService.swift in Sources */,
+				18E6CF9E3028EE9C00EFA132 /* WardrobeViewModel.swift in Sources */,
 				18E6CF3630288BC200EFA132 /* AuthenticationViewModel.swift in Sources */,
+				18E6CF9A3028EE2500EFA132 /* WardrobeService.swift in Sources */,
 				18E6CF70302894D300EFA132 /* UnavailableAppleAuthenticationProvider.swift in Sources */,
+				18E6CFB53028F97D00EFA132 /* AIWardrobeAnalysis.swift in Sources */,
 				18BE6F663024E9EB008EE769 /* ClosetAIApp.swift in Sources */,
 				18E6CF783028C26C00EFA132 /* AuthorizationHeader.swift in Sources */,
 				180C0F3D3026FC010074A5A8 /* HTTPMethod.swift in Sources */,
+				18E6CF923028ED3100EFA132 /* WardrobeAttributes.swift in Sources */,
 				18E6CF743028AC8900EFA132 /* DevelopmentAuthenticationService.swift in Sources */,
+				18E6CFAC3028F3D700EFA132 /* WardrobeAIService.swift in Sources */,
 				18C6F9CE30278B2F001C905A /* AuthenticationModels.swift in Sources */,
 				18C6F9DD30279E42001C905A /* SystemAppleAuthenticationProvider.swift in Sources */,
 				18C6F9CC30278AF3001C905A /* AuthenticationService.swift in Sources */,
 				18BE6F693024EA42008EE769 /* AppContainer.swift in Sources */,
 				18BE6F6B3024EA51008EE769 /* AppEnvironment.swift in Sources */,
+				18E6CFA03028EED500EFA132 /* WardrobeView.swift in Sources */,
 				18BE6F6F3024EA74008EE769 /* RootView.swift in Sources */,
 				18E6CF8C3028EAB100EFA132 /* DevelopmentUserService.swift in Sources */,
 				18C6F9D4302795BD001C905A /* NoContentResponse.swift in Sources */,
 				18E6CF763028C1B700EFA132 /* SessionRefreshing.swift in Sources */,
 				18E6CF7C3028DA5500EFA132 /* AuthenticatedAPIClient.swift in Sources */,
 				18E6CF7A3028C2E800EFA132 /* AccessTokenProviding.swift in Sources */,
+				18E6CF9C3028EE6300EFA132 /* DevelopmentWardrobeService.swift in Sources */,
 				18E6CF883028E1D000EFA132 /* APIUserService.swift in Sources */,
 				18E6CF843028E19A00EFA132 /* CurrentUser.swift in Sources */,
 				18E6CF863028E1B200EFA132 /* UserService.swift in Sources */,
 				180C0F433026FD070074A5A8 /* APIClient.swift in Sources */,
 				180C0F5A3027440B0074A5A8 /* AuthenticationState.swift in Sources */,
+				18E6CFA43028F30600EFA132 /* WardrobeAnalysis.swift in Sources */,
 				18E6CF723028AC0800EFA132 /* DevelopmentAppleAuthenticationProvider.swift in Sources */,
+				18E6CF903028ED2200EFA132 /* WardrobeCategory.swift in Sources */,
+				18E6CFB33028F94A00EFA132 /* FoundationModelsWardrobeAIService.swift in Sources */,
+				18E6CFAE3028F47500EFA132 /* WardrobeScannerViewModel.swift in Sources */,
+				18E6CFB73028FBE100EFA132 /* VisionWardrobeAIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

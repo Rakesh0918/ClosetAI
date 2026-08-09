@@ -34,6 +34,16 @@ struct HomeView: View {
                     }
                 }
                 .buttonStyle(.borderedProminent)
+                
+                NavigationLink {
+                    WardrobeView(
+                        viewModel: viewModel.makeWardrobeViewModel()
+                    )
+                } label: {
+                    Label("My Wardrobe", systemImage: "hanger")
+                }
+                .buttonStyle(.bordered)
+                
             }
             .padding()
             .navigationTitle("Home")
@@ -58,9 +68,17 @@ struct HomeView: View {
         tokenStore: tokenStore
     )
 
+    let wardrobeService: any WardrobeService =
+        DevelopmentWardrobeService()
+
+    let wardrobeAIService: any WardrobeAIService =
+        DevelopmentWardrobeAIService()
+
     let viewModel = HomeViewModel(
         userService: DevelopmentUserService(),
-        sessionManager: sessionManager
+        sessionManager: sessionManager,
+        wardrobeService: wardrobeService,
+        wardrobeAIService: wardrobeAIService
     )
 
     HomeView(

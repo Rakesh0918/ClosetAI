@@ -49,7 +49,9 @@ struct RootView: View {
                 HomeView(
                     viewModel: HomeViewModel(
                         userService: container.userService,
-                        sessionManager: container.sessionManager
+                        sessionManager: container.sessionManager,
+                        wardrobeService: container.wardrobeService,
+                        wardrobeAIService: container.wardrobeAIService
                     )
                 )
             }
@@ -96,6 +98,12 @@ struct RootView: View {
         apiClient: authenticatedAPIClient
     )
 
+    let wardrobeService: any WardrobeService =
+        DevelopmentWardrobeService()
+    
+    let wardrobeAIService: any WardrobeAIService =
+        DevelopmentWardrobeAIService()
+
     let container = AppContainer(
         environment: environment,
         apiClient: apiClient,
@@ -106,7 +114,9 @@ struct RootView: View {
             appleAuthenticationProvider,
         authenticatedAPIClient:
             authenticatedAPIClient,
-        userService: userService
+        userService: userService,
+        wardrobeService: wardrobeService,
+        wardrobeAIService: wardrobeAIService
     )
 
     RootView(container: container)
