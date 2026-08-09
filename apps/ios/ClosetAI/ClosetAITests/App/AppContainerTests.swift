@@ -17,8 +17,9 @@ final class AppContainerTests: XCTestCase {
         let environment = AppEnvironment.development
         let apiClient = MockAPIClient()
         let tokenStore = MockTokenStore()
-
         let authenticationService = MockAuthenticationService()
+        let appleAuthenticationProvider =
+            MockAppleAuthenticationProvider()
 
         let sessionManager = SessionManager(
             authenticationService: authenticationService,
@@ -30,7 +31,8 @@ final class AppContainerTests: XCTestCase {
             apiClient: apiClient,
             authenticationService: authenticationService,
             tokenStore: tokenStore,
-            sessionManager: sessionManager
+            sessionManager: sessionManager,
+            appleAuthenticationProvider: appleAuthenticationProvider
         )
 
         XCTAssertEqual(
@@ -43,8 +45,9 @@ final class AppContainerTests: XCTestCase {
         let environment = AppEnvironment.development
         let apiClient = MockAPIClient()
         let tokenStore = MockTokenStore()
-
         let authenticationService = MockAuthenticationService()
+        let appleAuthenticationProvider =
+            MockAppleAuthenticationProvider()
 
         let sessionManager = SessionManager(
             authenticationService: authenticationService,
@@ -56,7 +59,8 @@ final class AppContainerTests: XCTestCase {
             apiClient: apiClient,
             authenticationService: authenticationService,
             tokenStore: tokenStore,
-            sessionManager: sessionManager
+            sessionManager: sessionManager,
+            appleAuthenticationProvider: appleAuthenticationProvider
         )
 
         XCTAssertTrue(
@@ -68,8 +72,9 @@ final class AppContainerTests: XCTestCase {
         let environment = AppEnvironment.development
         let apiClient = MockAPIClient()
         let tokenStore = MockTokenStore()
-
         let authenticationService = MockAuthenticationService()
+        let appleAuthenticationProvider =
+            MockAppleAuthenticationProvider()
 
         let sessionManager = SessionManager(
             authenticationService: authenticationService,
@@ -81,36 +86,40 @@ final class AppContainerTests: XCTestCase {
             apiClient: apiClient,
             authenticationService: authenticationService,
             tokenStore: tokenStore,
-            sessionManager: sessionManager
+            sessionManager: sessionManager,
+            appleAuthenticationProvider: appleAuthenticationProvider
         )
 
         XCTAssertTrue(
             container.sessionManager === sessionManager
         )
     }
-}
 
-// MARK: - Mock Token Store
+    func testContainerStoresInjectedAppleAuthenticationProvider() {
+        let environment = AppEnvironment.development
+        let apiClient = MockAPIClient()
+        let tokenStore = MockTokenStore()
+        let authenticationService = MockAuthenticationService()
+        let appleAuthenticationProvider =
+            MockAppleAuthenticationProvider()
 
-private final class MockTokenStore: TokenStore, @unchecked Sendable {
-
-    private var tokens: StoredTokens?
-
-    func save(
-        accessToken: String,
-        refreshToken: String
-    ) throws {
-        tokens = StoredTokens(
-            accessToken: accessToken,
-            refreshToken: refreshToken
+        let sessionManager = SessionManager(
+            authenticationService: authenticationService,
+            tokenStore: tokenStore
         )
-    }
 
-    func load() throws -> StoredTokens? {
-        tokens
-    }
+        let container = AppContainer(
+            environment: environment,
+            apiClient: apiClient,
+            authenticationService: authenticationService,
+            tokenStore: tokenStore,
+            sessionManager: sessionManager,
+            appleAuthenticationProvider: appleAuthenticationProvider
+        )
 
-    func clear() throws {
-        tokens = nil
+        XCTAssertTrue(
+            container.appleAuthenticationProvider
+                is MockAppleAuthenticationProvider
+        )
     }
 }

@@ -16,19 +16,22 @@ final class AppContainer {
     let authenticationService: any AuthenticationService
     let tokenStore: any TokenStore
     let sessionManager: SessionManager
+    let appleAuthenticationProvider: any AppleAuthenticationProvider
 
     init(
         environment: AppEnvironment,
         apiClient: any APIClient,
         authenticationService: any AuthenticationService,
         tokenStore: any TokenStore,
-        sessionManager: SessionManager
+        sessionManager: SessionManager,
+        appleAuthenticationProvider: any AppleAuthenticationProvider
     ) {
         self.environment = environment
         self.apiClient = apiClient
         self.authenticationService = authenticationService
         self.tokenStore = tokenStore
         self.sessionManager = sessionManager
+        self.appleAuthenticationProvider = appleAuthenticationProvider
     }
 
     static var live: AppContainer {
@@ -49,12 +52,16 @@ final class AppContainer {
             tokenStore: tokenStore
         )
 
+        let appleAuthenticationProvider =
+            UnavailableAppleAuthenticationProvider()
+
         return AppContainer(
             environment: environment,
             apiClient: apiClient,
             authenticationService: authenticationService,
             tokenStore: tokenStore,
-            sessionManager: sessionManager
+            sessionManager: sessionManager,
+            appleAuthenticationProvider: appleAuthenticationProvider
         )
     }
 }

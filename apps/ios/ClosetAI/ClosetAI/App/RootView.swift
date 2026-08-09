@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RootView: View {
+
     let container: AppContainer
 
     @State private var router = AppRouter()
@@ -15,16 +16,25 @@ struct RootView: View {
     var body: some View {
         Group {
             switch container.sessionManager.state {
+
             case .unknown:
                 loadingView
 
             case .unauthenticated,
                  .authenticating,
                  .expired:
-                AuthenticationView()
+
+                AuthenticationView(
+                    viewModel: AuthenticationViewModel(
+                        sessionManager: container.sessionManager,
+                        appleAuthenticationProvider:
+                            container.appleAuthenticationProvider
+                    )
+                )
 
             case .authenticated,
                  .refreshing:
+
                 HomeView()
             }
         }
@@ -59,12 +69,16 @@ struct RootView: View {
         tokenStore: tokenStore
     )
 
+    let appleAuthenticationProvider =
+        UnavailableAppleAuthenticationProvider()
+
     let container = AppContainer(
         environment: environment,
         apiClient: apiClient,
         authenticationService: authenticationService,
         tokenStore: tokenStore,
-        sessionManager: sessionManager
+        sessionManager: sessionManager,
+        appleAuthenticationProvider: appleAuthenticationProvider
     )
 
     RootView(container: container)

@@ -245,37 +245,6 @@ final class SessionManagerTests: XCTestCase {
     }
 }
 
-// MARK: - Mock Token Store
-
-private final class MockTokenStore:
-    TokenStore,
-    @unchecked Sendable {
-
-    private(set) var tokens: StoredTokens?
-
-    func save(
-        accessToken: String,
-        refreshToken: String
-    ) throws {
-        tokens = StoredTokens(
-            accessToken: accessToken,
-            refreshToken: refreshToken
-        )
-    }
-
-    func load() throws -> StoredTokens? {
-        tokens
-    }
-
-    func clear() throws {
-        tokens = nil
-    }
-
-    func reset() {
-        tokens = nil
-    }
-}
-
 // MARK: - Test Error
 
 private enum TestAuthenticationError:
