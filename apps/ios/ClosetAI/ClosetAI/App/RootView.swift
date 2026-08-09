@@ -28,8 +28,9 @@ struct RootView: View {
                 )
             case .authenticated,
                  .refreshing:
-
-                HomeView()
+                HomeView(
+                    sessionManager: container.sessionManager
+                )
             }
         }
         .task {

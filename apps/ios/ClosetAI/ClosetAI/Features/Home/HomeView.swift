@@ -9,9 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
 
+    let sessionManager: SessionManager
+
     var body: some View {
         NavigationStack {
-            VStack(spacing: 16) {
+            VStack(spacing: 24) {
                 Image(systemName: "tshirt.fill")
                     .font(.system(size: 56))
 
@@ -21,6 +23,13 @@ struct HomeView: View {
 
                 Text("Your wardrobe is ready.")
                     .foregroundStyle(.secondary)
+
+                Button("Sign Out") {
+                    Task {
+                        await sessionManager.logout()
+                    }
+                }
+                .buttonStyle(.borderedProminent)
             }
             .padding()
             .navigationTitle("Home")
@@ -29,5 +38,19 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    let authenticationService = DevelopmentAuthenticationService()
+
+    let tokenStore = KeychainTokenStore(
+        service: "com.rakesh.closetai.preview",
+        account: "home-preview"
+    )
+
+    let sessionManager = SessionManager(
+        authenticationService: authenticationService,
+        tokenStore: tokenStore
+    )
+
+    HomeView(
+        sessionManager: sessionManager
+    )
 }
