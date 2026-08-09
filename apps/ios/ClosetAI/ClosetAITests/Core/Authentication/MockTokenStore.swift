@@ -15,14 +15,16 @@ final class MockTokenStore: TokenStore, @unchecked Sendable {
 
     func save(
         accessToken: String,
-        refreshToken: String
+        refreshToken: String,
+        expiresAt: Date
     ) throws {
         tokens = StoredTokens(
             accessToken: accessToken,
-            refreshToken: refreshToken
+            refreshToken: refreshToken,
+            expiresAt: expiresAt
         )
     }
-
+    
     func load() throws -> StoredTokens? {
         tokens
     }

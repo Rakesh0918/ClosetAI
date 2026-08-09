@@ -45,6 +45,18 @@
 		18E6CF70302894D300EFA132 /* UnavailableAppleAuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF6F302894D300EFA132 /* UnavailableAppleAuthenticationProvider.swift */; };
 		18E6CF723028AC0800EFA132 /* DevelopmentAppleAuthenticationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF713028AC0800EFA132 /* DevelopmentAppleAuthenticationProvider.swift */; };
 		18E6CF743028AC8900EFA132 /* DevelopmentAuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF733028AC8900EFA132 /* DevelopmentAuthenticationService.swift */; };
+		18E6CF763028C1B700EFA132 /* SessionRefreshing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF753028C1B700EFA132 /* SessionRefreshing.swift */; };
+		18E6CF783028C26C00EFA132 /* AuthorizationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF773028C26C00EFA132 /* AuthorizationHeader.swift */; };
+		18E6CF7A3028C2E800EFA132 /* AccessTokenProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF793028C2E800EFA132 /* AccessTokenProviding.swift */; };
+		18E6CF7C3028DA5500EFA132 /* AuthenticatedAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF7B3028DA5500EFA132 /* AuthenticatedAPIClient.swift */; };
+		18E6CF7E3028DADD00EFA132 /* AuthenticatedAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF7D3028DADD00EFA132 /* AuthenticatedAPIClientTests.swift */; };
+		18E6CF803028DC3000EFA132 /* MockAccessTokenProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF7F3028DC3000EFA132 /* MockAccessTokenProvider.swift */; };
+		18E6CF813028DCD200EFA132 /* AccessTokenProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF793028C2E800EFA132 /* AccessTokenProviding.swift */; };
+		18E6CF843028E19A00EFA132 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF833028E19A00EFA132 /* CurrentUser.swift */; };
+		18E6CF863028E1B200EFA132 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF853028E1B200EFA132 /* UserService.swift */; };
+		18E6CF883028E1D000EFA132 /* APIUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF873028E1D000EFA132 /* APIUserService.swift */; };
+		18E6CF8A3028E4CF00EFA132 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF893028E4CF00EFA132 /* HomeViewModel.swift */; };
+		18E6CF8C3028EAB100EFA132 /* DevelopmentUserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E6CF8B3028EAB100EFA132 /* DevelopmentUserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +118,17 @@
 		18E6CF6F302894D300EFA132 /* UnavailableAppleAuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnavailableAppleAuthenticationProvider.swift; sourceTree = "<group>"; };
 		18E6CF713028AC0800EFA132 /* DevelopmentAppleAuthenticationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentAppleAuthenticationProvider.swift; sourceTree = "<group>"; };
 		18E6CF733028AC8900EFA132 /* DevelopmentAuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentAuthenticationService.swift; sourceTree = "<group>"; };
+		18E6CF753028C1B700EFA132 /* SessionRefreshing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionRefreshing.swift; sourceTree = "<group>"; };
+		18E6CF773028C26C00EFA132 /* AuthorizationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationHeader.swift; sourceTree = "<group>"; };
+		18E6CF793028C2E800EFA132 /* AccessTokenProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessTokenProviding.swift; sourceTree = "<group>"; };
+		18E6CF7B3028DA5500EFA132 /* AuthenticatedAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedAPIClient.swift; sourceTree = "<group>"; };
+		18E6CF7D3028DADD00EFA132 /* AuthenticatedAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedAPIClientTests.swift; sourceTree = "<group>"; };
+		18E6CF7F3028DC3000EFA132 /* MockAccessTokenProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAccessTokenProvider.swift; sourceTree = "<group>"; };
+		18E6CF833028E19A00EFA132 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		18E6CF853028E1B200EFA132 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		18E6CF873028E1D000EFA132 /* APIUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUserService.swift; sourceTree = "<group>"; };
+		18E6CF893028E4CF00EFA132 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		18E6CF8B3028EAB100EFA132 /* DevelopmentUserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopmentUserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +164,8 @@
 				180C0F403026FCB60074A5A8 /* NetworkError.swift */,
 				180C0F423026FD070074A5A8 /* APIClient.swift */,
 				18C6F9D3302795BD001C905A /* NoContentResponse.swift */,
+				18E6CF773028C26C00EFA132 /* AuthorizationHeader.swift */,
+				18E6CF7B3028DA5500EFA132 /* AuthenticatedAPIClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -159,6 +184,8 @@
 				18E6CF6F302894D300EFA132 /* UnavailableAppleAuthenticationProvider.swift */,
 				18E6CF713028AC0800EFA132 /* DevelopmentAppleAuthenticationProvider.swift */,
 				18E6CF733028AC8900EFA132 /* DevelopmentAuthenticationService.swift */,
+				18E6CF753028C1B700EFA132 /* SessionRefreshing.swift */,
+				18E6CF793028C2E800EFA132 /* AccessTokenProviding.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -176,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				180C0F6A30274A130074A5A8 /* HomeView.swift */,
+				18E6CF893028E4CF00EFA132 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -215,6 +243,7 @@
 		18BE6F5C3024E9EB008EE769 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				18E6CF823028E18900EFA132 /* User */,
 				180C0F58302743F80074A5A8 /* Authentication */,
 				180C0F3B3026FB8B0074A5A8 /* Networking */,
 			);
@@ -308,6 +337,8 @@
 			isa = PBXGroup;
 			children = (
 				18E6CF5730288C9B00EFA132 /* APIClientTests.swift */,
+				18E6CF7D3028DADD00EFA132 /* AuthenticatedAPIClientTests.swift */,
+				18E6CF7F3028DC3000EFA132 /* MockAccessTokenProvider.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -354,6 +385,17 @@
 				18E6CF6B30288D1200EFA132 /* AuthenticationViewModelTests.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		18E6CF823028E18900EFA132 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				18E6CF833028E19A00EFA132 /* CurrentUser.swift */,
+				18E6CF853028E1B200EFA132 /* UserService.swift */,
+				18E6CF873028E1D000EFA132 /* APIUserService.swift */,
+				18E6CF8B3028EAB100EFA132 /* DevelopmentUserService.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -495,6 +537,7 @@
 				18BE6F6D3024EA64008EE769 /* AppRouter.swift in Sources */,
 				180C0F6B30274A130074A5A8 /* HomeView.swift in Sources */,
 				18C6F9D630279B58001C905A /* AppleAuthenticationProvider.swift in Sources */,
+				18E6CF8A3028E4CF00EFA132 /* HomeViewModel.swift in Sources */,
 				180C0F5C302744480074A5A8 /* TokenStore.swift in Sources */,
 				180C0F62302746920074A5A8 /* SessionManager.swift in Sources */,
 				180C0F413026FCB60074A5A8 /* NetworkError.swift in Sources */,
@@ -504,6 +547,7 @@
 				18E6CF3630288BC200EFA132 /* AuthenticationViewModel.swift in Sources */,
 				18E6CF70302894D300EFA132 /* UnavailableAppleAuthenticationProvider.swift in Sources */,
 				18BE6F663024E9EB008EE769 /* ClosetAIApp.swift in Sources */,
+				18E6CF783028C26C00EFA132 /* AuthorizationHeader.swift in Sources */,
 				180C0F3D3026FC010074A5A8 /* HTTPMethod.swift in Sources */,
 				18E6CF743028AC8900EFA132 /* DevelopmentAuthenticationService.swift in Sources */,
 				18C6F9CE30278B2F001C905A /* AuthenticationModels.swift in Sources */,
@@ -512,7 +556,14 @@
 				18BE6F693024EA42008EE769 /* AppContainer.swift in Sources */,
 				18BE6F6B3024EA51008EE769 /* AppEnvironment.swift in Sources */,
 				18BE6F6F3024EA74008EE769 /* RootView.swift in Sources */,
+				18E6CF8C3028EAB100EFA132 /* DevelopmentUserService.swift in Sources */,
 				18C6F9D4302795BD001C905A /* NoContentResponse.swift in Sources */,
+				18E6CF763028C1B700EFA132 /* SessionRefreshing.swift in Sources */,
+				18E6CF7C3028DA5500EFA132 /* AuthenticatedAPIClient.swift in Sources */,
+				18E6CF7A3028C2E800EFA132 /* AccessTokenProviding.swift in Sources */,
+				18E6CF883028E1D000EFA132 /* APIUserService.swift in Sources */,
+				18E6CF843028E19A00EFA132 /* CurrentUser.swift in Sources */,
+				18E6CF863028E1B200EFA132 /* UserService.swift in Sources */,
 				180C0F433026FD070074A5A8 /* APIClient.swift in Sources */,
 				180C0F5A3027440B0074A5A8 /* AuthenticationState.swift in Sources */,
 				18E6CF723028AC0800EFA132 /* DevelopmentAppleAuthenticationProvider.swift in Sources */,
@@ -524,10 +575,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				18E6CF5B30288C9B00EFA132 /* AppContainerTests.swift in Sources */,
+				18E6CF803028DC3000EFA132 /* MockAccessTokenProvider.swift in Sources */,
 				18E6CF5C30288C9B00EFA132 /* MockAPIClient.swift in Sources */,
 				18E6CF5D30288C9B00EFA132 /* APIAuthenticationServiceTests.swift in Sources */,
 				18E6CF5E30288C9B00EFA132 /* AppleAuthenticationProviderTests.swift in Sources */,
 				18E6CF6E30288E0A00EFA132 /* MockTokenStore.swift in Sources */,
+				18E6CF813028DCD200EFA132 /* AccessTokenProviding.swift in Sources */,
+				18E6CF7E3028DADD00EFA132 /* AuthenticatedAPIClientTests.swift in Sources */,
 				18E6CF6C30288D1200EFA132 /* AuthenticationViewModelTests.swift in Sources */,
 				18E6CF5F30288C9B00EFA132 /* MockAppleAuthenticationProvider.swift in Sources */,
 				18E6CF6030288C9B00EFA132 /* MockAuthenticationService.swift in Sources */,

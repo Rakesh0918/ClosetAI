@@ -17,4 +17,5 @@ enum NetworkError: Error, Sendable, Equatable {
     case noInternetConnection
     case requestCancelled
     case unknown
+    case unauthorized
 }

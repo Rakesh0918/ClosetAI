@@ -23,6 +23,8 @@ final class MockAuthenticationService:
     var signInError: Error?
     var refreshError: Error?
     var logoutError: Error?
+    
+    private(set) var lastRefreshToken: String?
 
     func signInWithApple(
         identityToken: String,
@@ -47,6 +49,7 @@ final class MockAuthenticationService:
         refreshToken: String
     ) async throws -> AuthenticationResponse {
         refreshCallCount += 1
+        lastRefreshToken = refreshToken
 
         if let refreshError {
             throw refreshError
@@ -82,5 +85,6 @@ final class MockAuthenticationService:
         signInError = nil
         refreshError = nil
         logoutError = nil
+        lastRefreshToken = nil
     }
 }

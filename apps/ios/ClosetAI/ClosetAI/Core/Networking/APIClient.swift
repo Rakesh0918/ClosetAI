@@ -18,17 +18,20 @@ struct URLSessionAPIClient: APIClient {
     private let session: URLSession
     private let decoder: JSONDecoder
     private let encoder: JSONEncoder
+    private let sessionRefresher: (any SessionRefreshing)?
 
     init(
         baseURL: URL,
         session: URLSession = .shared,
         decoder: JSONDecoder = JSONDecoder(),
-        encoder: JSONEncoder = JSONEncoder()
+        encoder: JSONEncoder = JSONEncoder(),
+        sessionRefresher: (any SessionRefreshing)? = nil
     ) {
         self.baseURL = baseURL
         self.session = session
         self.decoder = decoder
         self.encoder = encoder
+        self.sessionRefresher = sessionRefresher
     }
 
     func send<Response>(

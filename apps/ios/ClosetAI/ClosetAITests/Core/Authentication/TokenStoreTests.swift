@@ -23,10 +23,13 @@ final class TokenStoreTests: XCTestCase {
 
     func testSaveAndLoadTokens() throws {
         let store = makeStore()
+        
+        let expiresAt = Date().addingTimeInterval(3600)
 
         try store.save(
             accessToken: "access-token",
-            refreshToken: "refresh-token"
+            refreshToken: "refresh-token",
+            expiresAt: expiresAt
         )
 
         let tokens = try store.load()
@@ -35,22 +38,27 @@ final class TokenStoreTests: XCTestCase {
             tokens,
             StoredTokens(
                 accessToken: "access-token",
-                refreshToken: "refresh-token"
+                refreshToken: "refresh-token",
+                expiresAt: expiresAt
             )
         )
     }
 
     func testSaveUpdatesExistingTokens() throws {
         let store = makeStore()
+        
+        let expiresAt = Date().addingTimeInterval(3600)
 
         try store.save(
             accessToken: "old-access-token",
-            refreshToken: "old-refresh-token"
+            refreshToken: "old-refresh-token",
+            expiresAt: expiresAt
         )
 
         try store.save(
             accessToken: "new-access-token",
-            refreshToken: "new-refresh-token"
+            refreshToken: "new-refresh-token",
+            expiresAt: expiresAt
         )
 
         let tokens = try store.load()
@@ -59,7 +67,8 @@ final class TokenStoreTests: XCTestCase {
             tokens,
             StoredTokens(
                 accessToken: "new-access-token",
-                refreshToken: "new-refresh-token"
+                refreshToken: "new-refresh-token",
+                expiresAt: expiresAt
             )
         )
     }
@@ -74,10 +83,13 @@ final class TokenStoreTests: XCTestCase {
 
     func testClearRemovesTokens() throws {
         let store = makeStore()
+        
+        let expiresAt = Date().addingTimeInterval(3600)
 
         try store.save(
             accessToken: "access-token",
-            refreshToken: "refresh-token"
+            refreshToken: "refresh-token",
+            expiresAt: expiresAt
         )
 
         try store.clear()

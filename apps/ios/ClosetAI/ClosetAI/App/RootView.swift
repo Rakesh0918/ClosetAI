@@ -13,6 +13,21 @@ struct RootView: View {
 
     @State private var router = AppRouter()
 
+    @State private var authenticationViewModel:
+        AuthenticationViewModel
+
+    init(container: AppContainer) {
+        self.container = container
+
+        _authenticationViewModel = State(
+            initialValue: AuthenticationViewModel(
+                sessionManager: container.sessionManager,
+                appleAuthenticationProvider:
+                    container.appleAuthenticationProvider
+            )
+        )
+    }
+
     var body: some View {
         Group {
             switch container.sessionManager.state {
@@ -23,18 +38,24 @@ struct RootView: View {
             case .unauthenticated,
                  .authenticating,
                  .expired:
+
                 AuthenticationView(
-                    viewModel: container.authenticationViewModel
+                    viewModel: authenticationViewModel
                 )
+
             case .authenticated,
                  .refreshing:
+
                 HomeView(
-                    sessionManager: container.sessionManager
+                    viewModel: HomeViewModel(
+                        userService: container.userService,
+                        sessionManager: container.sessionManager
+                    )
                 )
             }
         }
         .task {
-            container.sessionManager.restoreSession()
+            await container.sessionManager.restoreSession()
         }
     }
 
@@ -50,9 +71,8 @@ struct RootView: View {
         baseURL: environment.apiBaseURL
     )
 
-    let authenticationService = APIAuthenticationService(
-        apiClient: apiClient
-    )
+    let authenticationService =
+        DevelopmentAuthenticationService()
 
     let tokenStore = KeychainTokenStore(
         service: "com.rakesh.closetai.preview",
@@ -65,7 +85,16 @@ struct RootView: View {
     )
 
     let appleAuthenticationProvider =
-        UnavailableAppleAuthenticationProvider()
+        DevelopmentAppleAuthenticationProvider()
+
+    let authenticatedAPIClient = AuthenticatedAPIClient(
+        apiClient: apiClient,
+        tokenProvider: sessionManager
+    )
+
+    let userService = APIUserService(
+        apiClient: authenticatedAPIClient
+    )
 
     let container = AppContainer(
         environment: environment,
@@ -73,7 +102,11 @@ struct RootView: View {
         authenticationService: authenticationService,
         tokenStore: tokenStore,
         sessionManager: sessionManager,
-        appleAuthenticationProvider: appleAuthenticationProvider
+        appleAuthenticationProvider:
+            appleAuthenticationProvider,
+        authenticatedAPIClient:
+            authenticatedAPIClient,
+        userService: userService
     )
 
     RootView(container: container)

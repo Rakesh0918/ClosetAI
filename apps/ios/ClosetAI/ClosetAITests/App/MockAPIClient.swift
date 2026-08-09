@@ -15,8 +15,8 @@ final class MockAPIClient: APIClient, @unchecked Sendable {
 
     private(set) var lastPath: String?
     private(set) var lastMethod: HTTPMethod?
+    private(set) var lastHeaders: [String: String]?
     private(set) var lastBody: Data?
-
     var responseData: Data?
 
     func send<Response>(
@@ -27,6 +27,7 @@ final class MockAPIClient: APIClient, @unchecked Sendable {
 
         lastPath = request.path
         lastMethod = request.method
+        lastHeaders = request.headers
         lastBody = request.body
 
         guard let responseData else {
@@ -55,6 +56,7 @@ final class MockAPIClient: APIClient, @unchecked Sendable {
         requestCount = 0
         lastPath = nil
         lastMethod = nil
+        lastHeaders = nil
         lastBody = nil
         responseData = nil
     }

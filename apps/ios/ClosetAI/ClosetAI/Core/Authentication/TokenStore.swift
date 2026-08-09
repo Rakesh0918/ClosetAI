@@ -11,17 +11,18 @@ import Security
 protocol TokenStore: Sendable {
     func save(
         accessToken: String,
-        refreshToken: String
+        refreshToken: String,
+        expiresAt: Date
     ) throws
 
     func load() throws -> StoredTokens?
 
     func clear() throws
 }
-
 struct StoredTokens: Sendable, Equatable, Codable {
     let accessToken: String
     let refreshToken: String
+    let expiresAt: Date
 }
 
 struct KeychainTokenStore: TokenStore {
@@ -39,11 +40,13 @@ struct KeychainTokenStore: TokenStore {
 
     func save(
         accessToken: String,
-        refreshToken: String
+        refreshToken: String,
+        expiresAt: Date
     ) throws {
         let tokens = StoredTokens(
             accessToken: accessToken,
-            refreshToken: refreshToken
+            refreshToken: refreshToken,
+            expiresAt: expiresAt
         )
 
         let data = try JSONEncoder().encode(tokens)

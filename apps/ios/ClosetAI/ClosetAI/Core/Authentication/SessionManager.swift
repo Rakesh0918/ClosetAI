@@ -10,7 +10,9 @@ import Observation
 
 @MainActor
 @Observable
-final class SessionManager {
+final class SessionManager:
+    SessionRefreshing,
+    AccessTokenProviding {
 
     private(set) var state: AuthenticationState = .unknown
 
@@ -27,7 +29,7 @@ final class SessionManager {
 
     // MARK: - Session Restoration
 
-    func restoreSession() {
+    func restoreSession() async {
         do {
             guard let tokens = try tokenStore.load() else {
                 state = .unauthenticated
@@ -40,7 +42,17 @@ final class SessionManager {
                 return
             }
 
-            state = .authenticated
+            if tokens.expiresAt > Date() {
+                state = .authenticated
+                return
+            }
+
+            state = .refreshing
+
+            await performRefresh(
+                refreshToken: tokens.refreshToken
+            )
+
         } catch {
             state = .unauthenticated
         }
@@ -60,14 +72,43 @@ final class SessionManager {
                 authorizationCode: authorizationCode
             )
 
+            let expiresAt = Date().addingTimeInterval(
+                TimeInterval(response.expiresIn)
+            )
+
             try tokenStore.save(
                 accessToken: response.accessToken,
-                refreshToken: response.refreshToken
+                refreshToken: response.refreshToken,
+                expiresAt: expiresAt
             )
 
             state = .authenticated
         } catch {
             state = .unauthenticated
+        }
+    }
+    
+    private func performRefresh(
+        refreshToken: String
+    ) async {
+        do {
+            let response = try await authenticationService.refresh(
+                refreshToken: refreshToken
+            )
+
+            let expiresAt = Date().addingTimeInterval(
+                TimeInterval(response.expiresIn)
+            )
+
+            try tokenStore.save(
+                accessToken: response.accessToken,
+                refreshToken: response.refreshToken,
+                expiresAt: expiresAt
+            )
+
+            state = .authenticated
+        } catch {
+            state = .expired
         }
     }
 
@@ -86,20 +127,9 @@ final class SessionManager {
 
         state = .refreshing
 
-        do {
-            let response = try await authenticationService.refresh(
-                refreshToken: tokens.refreshToken
-            )
-
-            try tokenStore.save(
-                accessToken: response.accessToken,
-                refreshToken: response.refreshToken
-            )
-
-            state = .authenticated
-        } catch {
-            state = .expired
-        }
+        await performRefresh(
+            refreshToken: tokens.refreshToken
+        )
     }
 
     // MARK: - Logout
@@ -128,5 +158,9 @@ final class SessionManager {
         }
 
         state = .unauthenticated
+    }
+    
+    func accessToken() async throws -> String? {
+        try tokenStore.load()?.accessToken
     }
 }

@@ -9,7 +9,11 @@ import SwiftUI
 
 struct HomeView: View {
 
-    let sessionManager: SessionManager
+    @State private var viewModel: HomeViewModel
+
+    init(viewModel: HomeViewModel) {
+        _viewModel = State(initialValue: viewModel)
+    }
 
     var body: some View {
         NavigationStack {
@@ -26,7 +30,7 @@ struct HomeView: View {
 
                 Button("Sign Out") {
                     Task {
-                        await sessionManager.logout()
+                        await viewModel.signOut()
                     }
                 }
                 .buttonStyle(.borderedProminent)
@@ -34,11 +38,15 @@ struct HomeView: View {
             .padding()
             .navigationTitle("Home")
         }
+        .task {
+            await viewModel.loadCurrentUser()
+        }
     }
 }
 
 #Preview {
-    let authenticationService = DevelopmentAuthenticationService()
+    let authenticationService =
+        DevelopmentAuthenticationService()
 
     let tokenStore = KeychainTokenStore(
         service: "com.rakesh.closetai.preview",
@@ -50,7 +58,12 @@ struct HomeView: View {
         tokenStore: tokenStore
     )
 
-    HomeView(
+    let viewModel = HomeViewModel(
+        userService: DevelopmentUserService(),
         sessionManager: sessionManager
+    )
+
+    HomeView(
+        viewModel: viewModel
     )
 }
